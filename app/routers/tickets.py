@@ -28,7 +28,7 @@ def check_ticket(ticket: int, ticket_pass: str, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_ticket)
     
-    return {"message": "Ticket registered successfully"}
+    return {"message": "Contraseña correcta"}
 
 @router.post("/register-comprador/name={name}&last_name={last_name}&email={email}&phone={phone}&id_ticket={id_ticket}")
 def register_comprador(name: str, last_name: str, email: str, phone: int, id_ticket: int, db: Session = Depends(get_db)):
@@ -49,4 +49,4 @@ def register_comprador(name: str, last_name: str, email: str, phone: int, id_tic
     db.commit()
     db.refresh(db_ticket)
     
-    return {"message": "Comprador registered and ticket updated successfully"}
+    return {"message": "Comprador registrado"}
